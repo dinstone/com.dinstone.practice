@@ -1,0 +1,11 @@
+grant {
+     permission javax.security.auth.AuthPermission "createLoginContext";
+     permission javax.security.auth.AuthPermission "doAs";
+     permission javax.security.auth.AuthPermission "doAsPrivileged";
+     permission javax.security.auth.AuthPermission "modifyPrincipals";
+     permission javax.security.auth.AuthPermission "getSubject"; 
+};
+
+grant principal com.dinstone.jsa.demo.PrincipalImpl "brad" {
+     permission com.dinstone.jsa.demo.PersonnelPermission "access";
+};

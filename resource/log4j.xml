@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- the log level of the development phase is usually the debug. -->
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="warn" />
+		</filter>
+	</appender>
+
+	<appender name="dailyRollingFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/error.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] %l - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="debugDailyRollingFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/debug.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="debug" />
+			<param name="levelMax" value="info" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+	<appender name="warnDailyRollingFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/warn.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="warn" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<logger name="com.dinstone.practice.log.Log4jTest" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="debugDailyRollingFileAppender" />
+		<appender-ref ref="warnDailyRollingFileAppender" />
+	</logger>
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="consoleAppender" />
+	</root>
+</log4j:configuration>

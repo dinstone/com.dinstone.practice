@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Review id="Practice_Review_01">
+  <ReviewIssue id="GYWDGUJC">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-02-21 :: 11:26:03:672 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-02-21 :: 11:26:52:391 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>guojf</ReviewerId>
+    <AssignedTo>guojf</AssignedTo>
+    <File line="17">src/com/dinstone/pratice/encode/CharsetEncode.java</File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.normal</Severity>
+    <Summary>版本信息错误</Summary>
+    <Description>删除版本信息</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>
