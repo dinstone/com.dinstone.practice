@@ -17,6 +17,8 @@
 package com.dinstone.practice.collection;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
 
 /**
  * @author guojf
@@ -27,9 +29,25 @@ public class HashMapTest {
     public static void main(String[] args) {
         HashMap<String, String> sm = new HashMap<String, String>(9);
 
+        // OK
         sm.put(null, "null");
-
         System.out.println(sm.get(null));
+
+        sm.put("k1", "v1");
+
+        // java.util.ConcurrentModificationException
+        // for (String key : sm.keySet()) {
+        // sm.remove(key);
+        // }
+
+        System.out.println(sm);
+
+        for (Iterator<Entry<String, String>> iterator = sm.entrySet().iterator(); iterator.hasNext();) {
+            iterator.next();
+            iterator.remove();
+        }
+
+        System.out.println(sm);
     }
 
 }
