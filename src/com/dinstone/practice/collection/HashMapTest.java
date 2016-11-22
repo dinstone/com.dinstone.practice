@@ -30,7 +30,7 @@ public class HashMapTest {
         HashMap<String, String> sm = new HashMap<String, String>(9);
 
         // OK
-        sm.put(null, "null");
+        sm.put(null, "empty");
         System.out.println(sm.get(null));
 
         sm.put("k1", "v1");

@@ -1,2 +1,0 @@
-2015-06-06 17:18:42,996 [INFO ] com.dinstone.practice.log.Log4jTest.main(Log4jTest.java:33) - info
-2015-06-06 17:18:42,996 [DEBUG] com.dinstone.practice.log.Log4jTest.main(Log4jTest.java:34) - debug

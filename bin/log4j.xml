@@ -12,7 +12,9 @@
 	</appender>
 
 	<appender name="dailyRollingFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="logs/error.log" />
+		<param name="bufferedIO" value="true" />
+		<param name="bufferSize" value="8192" />
+		<param name="File" value="logs/drf.log" />
 		<param name="Append" value="true" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] %l - %m%n" />
@@ -45,8 +47,7 @@
 
 	<logger name="com.dinstone.practice.log.Log4jTest" additivity="false">
 		<level value="debug" />
-		<appender-ref ref="debugDailyRollingFileAppender" />
-		<appender-ref ref="warnDailyRollingFileAppender" />
+		<appender-ref ref="dailyRollingFileAppender" />
 	</logger>
 
 	<root>

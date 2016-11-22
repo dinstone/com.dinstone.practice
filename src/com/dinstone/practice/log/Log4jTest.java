@@ -34,7 +34,16 @@ public class Log4jTest {
         LOGGER.debug("debug");
         LOGGER.trace("trace");
 
-        Slf4jTest.log();
+        long st = System.currentTimeMillis();
+        int wline = 100000;
+        for (int i = 0; i < wline; i++) {
+            LOGGER.warn("test log ============================================" + i);
+        }
+        long et = System.currentTimeMillis();
+
+        System.out.println("log4j : " + (et - st) * 1000 / wline + " wps");
+
+        //Slf4jTest.log();
     }
 
 }

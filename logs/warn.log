@@ -1,3 +1,0 @@
-2015-06-06 17:18:42,996 [FATAL] com.dinstone.practice.log.Log4jTest.main(Log4jTest.java:30) - fatal
-2015-06-06 17:18:42,996 [ERROR] com.dinstone.practice.log.Log4jTest.main(Log4jTest.java:31) - error
-2015-06-06 17:18:42,996 [WARN ] com.dinstone.practice.log.Log4jTest.main(Log4jTest.java:32) - warn
