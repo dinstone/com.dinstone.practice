@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- setting debug="true" will provide debug info in the command line screen when running ant from the command line -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+	<!-- NOTES: This is used with the src/tests/func/Log4jAsyncTest.java functional test tag <logger> was formerly <category> in older log4j versions tag <level> was formerly <priority> -->
+	<appender name="testAppender" class="org.apache.log4j.FileAppender">
+		<param name="file" value="logs/log4jTest.log" />
+		<param name="append" value="true" />
+		<param name="threshold" value="debug" />
+		<!-- default values if not specified -->
+		<!-- <param name="immediateFlush" value="true" /> <param name="bufferedIO" value="false"/> -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{MM-dd-yy HH:mm:ss} %-5p %c{2} [%x] [%X{TT1}] - %m%n" />
+		</layout>
+	</appender>
+	<appender name="async" class="org.apache.log4j.AsyncAppender">
+		<param name="BufferSize" value="128" /> <!-- default value is 128 messages -->
+		<appender-ref ref="testAppender" />
+	</appender>
+
+	<logger name="test.func" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="testAppender" />
+	</logger>
+	<logger name="asynclogger" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="async" />
+	</logger>
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="async" />
+	</root>
+</log4j:configuration>
+					
